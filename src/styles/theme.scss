@@ -1,0 +1,44 @@
+// 功能色---功能色代表了明确的信息以及状态，比如成功、出错、失败、提醒、链接等
+$brand: #1d7ffd;
+$brandHover: #4a98fd;
+$brandClick: #0064e3;
+$brandDisabled: #d1e5ff;
+
+$error: #D11012;
+$errorHover: #FF6365;
+$errorClick: #BC0709;
+$errorDisabled: #FFD8D8;
+
+$warning: #EE741B;
+$warningHover: #F18F48;
+$warningClick: #C95D0D;
+$warningDisabled: #FCE3D1;
+
+$success: #21BF50;
+$successHover: #4DCB73;
+$successClick: #0C9335;
+$successDisabled: #D2F2DC;
+
+// 灰色字体
+$fontGy: #0D1639;
+$fontGy20: rgba(13,22,57,0.2);
+$fontGy40: rgba(13,22,57,0.4);
+$fontGy60: rgba(13,22,57,0.6);
+
+// 白色字体
+$fontWh: #fff;
+$fontWh90: rgba(255,255,255,0.9);
+$fontWh55: rgba(13,22,57,0.55);
+$fontWh35: rgba(13,22,57,0.35);
+$fontWh22: rgba(13,22,57,0.22);
+
+// ----------box--------------
+$boxShadow: rgba(197, 197, 197, 0.5);
+
+// ----------input-------------
+$inputDisabled: #eee;
+$inputBorder: #BCC4D0;
+
+// ----------select------------
+$selectBorder: #EBEDF1;
+
