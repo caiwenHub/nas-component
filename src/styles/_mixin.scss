@@ -8,6 +8,44 @@
 
 }
 
+@mixin button-default-style($borderColor, $hover, $active, $disabled) {
+    border-color: $borderColor;
+    background: $white;
+    color: $borderColor;
+
+    &:hover {
+        border-color: $hover;
+        color: $hover;
+    }
+
+    &:active,
+    &.active {
+        border-color: $active;
+        color: $active;
+    }
+
+    &:disabled,
+    &.disabled {
+        border-color: $disabled;
+        color: $disabled;
+    }
+}
+
+@mixin button-text-style($color, $hover, $active, $disabled) {
+    color: $color;
+    &:hover {
+        color: $hover;
+    }
+    &:active,
+    &.active {
+        color: $active;
+    }
+    &:disabled,
+    &.disabled {
+        color: $disabled;
+    }
+}
+
 @mixin button-style($background,
     $border,
     $color,
@@ -17,14 +55,16 @@
     $click-color,
     $disabled-background,
     $disabled-color ) {
+
+
     background: $background;
     border-color: $border;
     color: $color;
 
     &:hover {
-        color: $hover-color;
         background: $hover-background;
         border-color: $hover-background;
+        color: $hover-color;
     }
 
     &:active,

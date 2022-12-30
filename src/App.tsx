@@ -5,38 +5,40 @@ function App() {
 
   return (
     <div className="App">
-      <Button>我是按钮</Button>
+      <Button type="text" danger size="sm">我是按钮</Button>
+      <br />
+      <Button type="link" danger size="sm">我是按钮</Button>
       <br />
       <br />
-      <Button btnType="primary" size="lg">
+      <Button type="primary" danger size="lg" >
         按钮
       </Button>
       &nbsp;&nbsp;
-      <Button btnType="primary" size="sm">
+      <Button type="primary" size="sm"  >
         按钮
       </Button>
       &nbsp;&nbsp;
-      <Button btnType="primary">
+      <Button type="primary" warning>
         按钮
       </Button>
       &nbsp;&nbsp;
-      <Button btnType="danger" size="sm">
+      <Button  size="sm" success>
         按钮
       </Button>
       &nbsp;&nbsp;
-      <Button btnType="success" size="sm">
+      <Button size="sm" danger>
         按钮
       </Button>
       &nbsp;&nbsp;
-      <Button btnType="warning" size="sm">
+      <Button  size="sm">
         按钮
       </Button>
       &nbsp;&nbsp;
-      <Button btnType="text" size="sm" >
+      <Button  size="sm" >
         按钮
       </Button>{" "}
       &nbsp;&nbsp;
-      <Button btnType="link" href="#" size="sm">
+      <Button type="link" href="#" size="sm">
         按钮
       </Button>
       <br />

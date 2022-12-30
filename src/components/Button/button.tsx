@@ -3,40 +3,49 @@ import classnames from "classnames";
 
 interface BaseButtonProps {
   size?: "lg" | "sm";
-  btnType?:
-    | "primary"
-    | "default"
-    | "danger"
-    | "success"
-    | "link"
-    | "warning"
-    | "text";
+  type?: "primary" | "default" | "link" | "text";
+  danger: boolean;
+  success: boolean;
+  warning: boolean;
   className?: string;
   disabled?: boolean;
   children: React.ReactNode;
   href?: string;
 }
 type NativeButtonProps = BaseButtonProps &
-  React.ButtonHTMLAttributes<HTMLElement>;
+  Omit<React.ButtonHTMLAttributes<any>, "type">;
 type AnchorButtonProps = BaseButtonProps &
-  React.AnchorHTMLAttributes<HTMLElement>;
+  Omit<React.AnchorHTMLAttributes<any>, "type">;
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const { size, btnType, children, className, disabled, href, ...restProps } =
-    props;
+  const {
+    size,
+    type,
+    children,
+    className,
+    disabled,
+    href,
+    danger,
+    success,
+    warning,
+    ...restProps
+  } = props;
   const classes = classnames("btn", className, {
-    [`btn-${btnType}`]: btnType,
+    [`btn-${type}`]: type,
+    [`btn-danger`]: !!danger,
+    [`btn-success`]: !!success,
+    [`btn-warning`]: !!warning,
     [`btn-${size}`]: size,
-    disabled: btnType === "link" && disabled,
+    disabled: type === "link" && disabled,
   });
-  if (btnType === "link" && href) {
+  if (type === "link" && href) {
     return (
       <a href={href} className={classes} {...restProps}>
         {children}
       </a>
     );
-  } else if (btnType === "text") {
+  } else if (type === "text") {
     return (
       <span className={classes} {...restProps}>
         {children}
@@ -52,6 +61,6 @@ const Button: React.FC<ButtonProps> = (props) => {
 };
 Button.defaultProps = {
   disabled: false,
-  btnType: "default",
+  type: "default",
 };
 export default Button;

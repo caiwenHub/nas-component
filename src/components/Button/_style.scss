@@ -34,41 +34,50 @@
     @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm, $btn-width-sm, $btn-height-sm);
 }
 
+.btn-default {
+    &.btn-danger {
+        @include button-default-style($danger, $dangerHover, $dangerClick, $dangerDisabled)
+    }
+
+    &.btn-success {
+        @include button-default-style($success, $successHover, $successClick, $successDisabled)
+    }
+
+    &.btn-warning {
+        @include button-default-style($warning, $warningHover, $warningClick, $warningDisabled)
+    }
+
+    @include button-default-style($primary, $primaryHover, $primaryClick, $primaryDisabled)
+}
+
 .btn-primary {
+    &.btn-danger {
+        @include button-style($danger, $danger, $dangerColor, $dangerHover, $dangerHoverColor, $dangerClick, $dangerClickColor, $dangerDisabled, $dangerDisabledColor)
+    }
+
+    &.btn-success {
+        @include button-style($success, $success, $successColor, $successHover, $successHoverColor, $successClick, $successClickColor, $successDisabled, $successDisabledColor)
+    }
+
+    &.btn-warning {
+        @include button-style($warning, $warning, $warningColor, $warningHover, $warningHoverColor, $warningClick, $warningClickColor, $warningDisabled, $warningDisabledColor)
+    }
+
     @include button-style($primary, $primary, $primaryColor, $primaryHover, $primaryHoverColor, $primaryClick, $primaryClickColor, $primaryDisabled, $primaryDisabledColor)
 }
 
-.btn-danger {
-    @include button-style($danger, $danger, $dangerColor, $dangerHover, $dangerHoverColor, $dangerClick, $dangerClickColor, $dangerDisabled, $dangerDisabledColor)
-}
 
-.btn-success {
-    @include button-style($success, $success, $successColor, $successHover, $successHoverColor, $successClick, $successClickColor, $successDisabled, $successDisabledColor)
-}
-
-// .btn-default {
-//     @include button-style($white, $gray-400, $blue, $white, $primary, $primary)
-// }
-
-.btn-warning {
-    @include button-style($warning, $warning, $warningColor, $warningHover, $warningHoverColor, $warningClick, $warningClickColor, $warningDisabled, $warningDisabledColor)
-}
-
-
-.btn-link {
+.btn-text {
     font-weight: $font-weight-normal;
     color: $btn-link-color;
-    text-decoration: $link-decoration;
     box-shadow: none;
 
     &:hover {
         color: $btn-link-hover-color;
-        text-decoration: $link-hover-decoration;
     }
 
     &:focus,
     &.focus {
-        text-decoration: $link-hover-decoration;
         box-shadow: none;
     }
 
@@ -76,5 +85,56 @@
     &.disabled {
         color: $btn-link-disabled-color;
         pointer-events: none;
+    }
+
+    &.btn-danger {
+        @include button-text-style($danger, $dangerHover, $dangerClick, $dangerDisabled)
+    }
+
+    &.btn-success {
+        @include button-text-style($success, $successHover, $successClick, $successDisabled)
+    }
+
+    &.btn-warning {
+        @include button-text-style($warning, $warningHover, $warningClick, $warningDisabled)
+    }
+
+
+}
+
+.btn-link {
+    font-weight: $font-weight-normal;
+    color: $primary;
+    text-decoration: $link-decoration;
+    box-shadow: none;
+    background: none;
+    &:hover {
+        color: $primaryHover;
+        text-decoration: $link-hover-decoration;
+    }
+
+    &:active,
+    &.active {
+        color: $primaryClick;
+        text-decoration: $link-hover-decoration;
+        box-shadow: none;
+    }
+
+    &:disabled,
+    &.disabled {
+        color: $primaryDisabled;
+        pointer-events: none;
+    }
+
+    &.btn-danger {
+        @include button-text-style($danger, $dangerHover, $dangerClick, $dangerDisabled)
+    }
+
+    &.btn-success {
+        @include button-text-style($success, $successHover, $successClick, $successDisabled)
+    }
+
+    &.btn-warning {
+        @include button-text-style($warning, $warningHover, $warningClick, $warningDisabled)
     }
 }
