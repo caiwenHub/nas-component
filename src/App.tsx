@@ -5,12 +5,17 @@ function App() {
 
   return (
     <div className="App">
-      <Button type="text" danger size="sm">我是按钮</Button>
+      <Button type="text" success size="sm">我是按钮</Button>
+      <br />
+      <Button type="text" danger size="sm">文字危险</Button>
       <br />
       <Button type="link" danger size="sm">我是按钮</Button>
       <br />
       <br />
       <Button type="primary" danger size="lg" >
+        按钮
+      </Button> &nbsp;&nbsp;
+      <Button type="default" danger size="sm" onClick={()=>alert('12313')}>
         按钮
       </Button>
       &nbsp;&nbsp;

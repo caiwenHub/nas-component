@@ -31,7 +31,23 @@
     }
 }
 
-@mixin button-text-style($color, $hover, $active, $disabled) {
+@mixin button-text-style($color, $hover, $hover-background,$active,$active-background,$disabled) {
+    color: $color;
+    &:hover {
+        color: $hover;
+        background: $hover-background;
+    }
+    &:active,
+    &.active {
+        color: $active;
+        background: $active-background;
+    }
+    &:disabled,
+    &.disabled {
+        color: $disabled;
+    }
+}
+@mixin button-link-style($color, $hover,$active,$disabled) {
     color: $color;
     &:hover {
         color: $hover;

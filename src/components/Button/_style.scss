@@ -74,11 +74,13 @@
 
     &:hover {
         color: $btn-link-hover-color;
+        background: $primaryTextHover;
     }
 
-    &:focus,
-    &.focus {
+    &:active,
+    &.active {
         box-shadow: none;
+        background: $primaryTextActive;
     }
 
     &:disabled,
@@ -88,15 +90,15 @@
     }
 
     &.btn-danger {
-        @include button-text-style($danger, $dangerHover, $dangerClick, $dangerDisabled)
+        @include button-text-style($danger, $dangerHover, $dangerTextHover, $dangerClick, $dangerTextClick, $dangerDisabled)
     }
 
     &.btn-success {
-        @include button-text-style($success, $successHover, $successClick, $successDisabled)
+        @include button-text-style($success, $successHover, $successTextHover, $successClick, $successTextClick, $successDisabled)
     }
 
     &.btn-warning {
-        @include button-text-style($warning, $warningHover, $warningClick, $warningDisabled)
+        @include button-text-style($warning, $warningHover, $warningTextHover, $warningClick, $warningTextClick, $warningDisabled)
     }
 
 
@@ -108,6 +110,7 @@
     text-decoration: $link-decoration;
     box-shadow: none;
     background: none;
+
     &:hover {
         color: $primaryHover;
         text-decoration: $link-hover-decoration;
@@ -127,14 +130,14 @@
     }
 
     &.btn-danger {
-        @include button-text-style($danger, $dangerHover, $dangerClick, $dangerDisabled)
+        @include button-link-style($danger, $dangerHover, $dangerClick, $dangerDisabled)
     }
 
     &.btn-success {
-        @include button-text-style($success, $successHover, $successClick, $successDisabled)
+        @include button-link-style($success, $successHover, $successClick, $successDisabled)
     }
 
     &.btn-warning {
-        @include button-text-style($warning, $warningHover, $warningClick, $warningDisabled)
+        @include button-link-style($warning, $warningHover, $warningClick, $warningDisabled)
     }
 }
