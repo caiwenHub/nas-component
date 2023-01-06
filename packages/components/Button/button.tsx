@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 
-interface BaseButtonProps {
+export interface BaseButtonProps {
   size?: "lg" | "sm";
   type?: "primary" | "default" | "link" | "text";
   danger: boolean;
